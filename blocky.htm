@@ -1,0 +1,30 @@
+var angulo = 0;
+var angulo_diff = 10;
+var ancho_scaner = 5;
+var distancia;
+var nadar = 0;
+var giro = 2;
+var velocidad = 100;
+
+while (true)
+
+//funciones SWIM, SCAN, CANNON, 
+{
+    // nadar en circulos
+    nadar += giro;
+    swim(nadar, velocidad);
+
+    // escanear 
+    distancia = scan(angulo, ancho_scaner);
+
+    // Si la distancia es reducida por otro, disparar a (angulo, distancia ques al mismo lugar que escanea)
+    if (distancia <= 70)
+    {
+        cannon(angulo, distancia);
+    }
+    //seguir escaneando 
+    else
+    {
+        angulo += angulo_diff;
+    }
+}
